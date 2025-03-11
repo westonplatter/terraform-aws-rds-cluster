@@ -307,7 +307,7 @@ resource "aws_rds_cluster" "secondary" {
   enabled_cloudwatch_logs_exports = var.enabled_cloudwatch_logs_exports
   deletion_protection             = var.deletion_protection
 
-  global_cluster_identifier = var.global_cluster_identifier
+  # global_cluster_identifier = var.global_cluster_identifier
 
   # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster#replication_source_identifier
   # ARN of a source DB cluster or DB instance if this DB cluster is to be created as a Read Replica.
