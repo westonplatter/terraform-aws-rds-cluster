@@ -317,7 +317,8 @@ resource "aws_rds_cluster" "secondary" {
   lifecycle {
     ignore_changes = [
       replication_source_identifier, # will be set/managed by Global Cluster
-      snapshot_identifier,           # if created from a snapshot, will be non-null at creation, but null afterwards
+      snapshot_identifier,           # if created from a snapshot, will be non-null at creation, but null afterwards 
+      global_cluster_identifier,     # created from snapshot # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster.html#global-cluster-restored-from-snapshot
     ]
   }
 }
